@@ -26,7 +26,7 @@ class CarOnMap: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        let newTitle = String(id)+", "+model+", "+fuel
+        let newTitle = model+", "+fuel
         return newTitle
     }
     
@@ -34,3 +34,4 @@ class CarOnMap: NSObject, MKAnnotation {
         return locationName
     }
 }
+

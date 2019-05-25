@@ -44,8 +44,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-            
-            mapView.showsUserLocation = true
         }
         
         //Загружаем автомобили в фоне
@@ -63,12 +61,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             for i in 0..<self.cars.count {
                 let car = self.cars[i]
             let coordinates = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
-                let caronmap = CarOnMap(id: car.id, fuel: car.fuel!, model: car.model!, locationName: "test", coordinate: coordinates)
+                let caronmap = CarOnMap(id: car.id, fuel: car.fuel!, model: car.model!, locationName: "", coordinate: coordinates)
                 self.mapView.addAnnotation(caronmap)
             }
         }
 
         
+    }
+    
+    //Определить текущую позицию пользователя
+    @IBAction func curLocation(_ sender: Any) {
+        locationManager.startUpdatingLocation()
+        self.mapView.setCenter(self.mapView.userLocation.coordinate, animated: true)
     }
     
     //функция сохраняет автомобили в кордату
@@ -99,7 +103,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             [String]).joined(separator: ", ")
     }
     
-    //узнаем где пользователь
+    //узнаем где пользователь при запуске
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let userLocation:CLLocation = locations[0] as CLLocation
@@ -110,8 +114,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.2,longitudeDelta: 0.2)
         let region = MKCoordinateRegion(center: coordinations, span: span)
         
+        
+        mapView.showsUserLocation = true
         mapView.setRegion(region, animated: true)
-
+        manager.stopUpdatingLocation()
     }
    
 
