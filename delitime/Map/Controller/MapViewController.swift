@@ -63,7 +63,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             for i in 0..<self.cars.count {
                 let car = self.cars[i]
             let coordinates = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
-            let caronmap = CarOnMap(model: car.model!, locationName: "test", coordinate: coordinates)
+                let caronmap = CarOnMap(id: car.id, fuel: car.fuel!, model: car.model!, locationName: "test", coordinate: coordinates)
                 self.mapView.addAnnotation(caronmap)
             }
         }
