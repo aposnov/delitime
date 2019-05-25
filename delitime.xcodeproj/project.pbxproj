@@ -19,6 +19,10 @@
 		E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D02299614A00271917 /* NetworkError.swift */; };
 		E7C0D5D322996EC200271917 /* CarServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D222996EC200271917 /* CarServerModel.swift */; };
 		E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D4229981BA00271917 /* CarOnMap.swift */; };
+		E7C0D5DB229999AF00271917 /* CarOnMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DA229999AF00271917 /* CarOnMapView.swift */; };
+		E7C0D5DD229999EB00271917 /* CarOnMapClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */; };
+		E7C0D5DF2299A2B900271917 /* CarBrandServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */; };
+		E7C0D5E12299F59900271917 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5E02299F59900271917 /* CarDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		E7C0D5D02299614A00271917 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E7C0D5D222996EC200271917 /* CarServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServerModel.swift; sourceTree = "<group>"; };
 		E7C0D5D4229981BA00271917 /* CarOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMap.swift; sourceTree = "<group>"; };
+		E7C0D5DA229999AF00271917 /* CarOnMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMapView.swift; sourceTree = "<group>"; };
+		E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMapClusterView.swift; sourceTree = "<group>"; };
+		E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandServerModel.swift; sourceTree = "<group>"; };
+		E7C0D5E02299F59900271917 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +144,10 @@
 			children = (
 				E7C0D5C622995A6900271917 /* DelitimeResponse.swift */,
 				E7C0D5D222996EC200271917 /* CarServerModel.swift */,
+				E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */,
 				E7C0D5D4229981BA00271917 /* CarOnMap.swift */,
+				E7C0D5DA229999AF00271917 /* CarOnMapView.swift */,
+				E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				E7AE37502295E3AD007963EB /* MapViewController.swift */,
+				E7C0D5E02299F59900271917 /* CarDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,12 +257,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C0D5D322996EC200271917 /* CarServerModel.swift in Sources */,
+				E7C0D5E12299F59900271917 /* CarDetailViewController.swift in Sources */,
+				E7C0D5DB229999AF00271917 /* CarOnMapView.swift in Sources */,
 				E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */,
 				E7AE37572295E3AD007963EB /* delitime.xcdatamodeld in Sources */,
 				E7C0D5C722995A6900271917 /* DelitimeResponse.swift in Sources */,
+				E7C0D5DD229999EB00271917 /* CarOnMapClusterView.swift in Sources */,
 				E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */,
 				E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */,
 				E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */,
+				E7C0D5DF2299A2B900271917 /* CarBrandServerModel.swift in Sources */,
 				E7C0D5CA22995B9700271917 /* NetworkService.swift in Sources */,
 				E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */,
 			);

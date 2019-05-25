@@ -10,6 +10,7 @@ import Foundation
 
 class DelitimeResponse {
     let carsFromSrv: [CarServerModel]
+    let carsBrandFromSrv: [CarBrandServerModel]
     
     init(json: Any) throws {
         
@@ -18,14 +19,21 @@ class DelitimeResponse {
         
         guard let array = json as? JSON else { throw NetworkError.failInternerError }
         guard let arrayOfCars = array["cars"] as? JSONcars else { throw NetworkError.failInternerError }
+      
         
         var carsFromSrv = [CarServerModel]()
-
         for dictioanary in arrayOfCars {
         guard let car = CarServerModel(dict: dictioanary) else { continue }
            carsFromSrv.append(car)
          }
-       self.carsFromSrv = carsFromSrv
         
+      var carsBrandFromSrv = [CarBrandServerModel]()
+        for dictioanary in arrayOfCars {
+            guard let car = CarBrandServerModel(dict: dictioanary) else { continue }
+            carsBrandFromSrv.append(car)
+        }
+        
+       self.carsFromSrv = carsFromSrv
+       self.carsBrandFromSrv = carsBrandFromSrv
     }
 }
