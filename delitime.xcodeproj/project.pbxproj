@@ -7,27 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FE5A1E29449AE6447DFC6C3 /* Pods_delitime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BEA841E5A65E8F95CA0B1CA /* Pods_delitime.framework */; };
 		E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE374E2295E3AD007963EB /* AppDelegate.swift */; };
-		E7AE37512295E3AD007963EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37502295E3AD007963EB /* ViewController.swift */; };
-		E7AE37542295E3AD007963EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37522295E3AD007963EB /* Main.storyboard */; };
+		E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37502295E3AD007963EB /* MapViewController.swift */; };
+		E7AE37542295E3AD007963EB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37522295E3AD007963EB /* Map.storyboard */; };
 		E7AE37572295E3AD007963EB /* delitime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */; };
 		E7AE37592295E3AF007963EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37582295E3AF007963EB /* Assets.xcassets */; };
 		E7AE375C2295E3AF007963EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */; };
+		E7C0D5C722995A6900271917 /* DelitimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5C622995A6900271917 /* DelitimeResponse.swift */; };
+		E7C0D5CA22995B9700271917 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5C922995B9700271917 /* NetworkService.swift */; };
+		E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */; };
+		E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D02299614A00271917 /* NetworkError.swift */; };
+		E7C0D5D322996EC200271917 /* CarServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D222996EC200271917 /* CarServerModel.swift */; };
+		E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D4229981BA00271917 /* CarOnMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3CAE5D4EA62A3FEE294B00DE /* Pods-delitime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-delitime.release.xcconfig"; path = "Target Support Files/Pods-delitime/Pods-delitime.release.xcconfig"; sourceTree = "<group>"; };
-		9BEA841E5A65E8F95CA0B1CA /* Pods_delitime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_delitime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB42B7C91BABA8E2CF86E00B /* Pods-delitime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-delitime.debug.xcconfig"; path = "Target Support Files/Pods-delitime/Pods-delitime.debug.xcconfig"; sourceTree = "<group>"; };
 		E7AE374B2295E3AD007963EB /* delitime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = delitime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AE374E2295E3AD007963EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7AE37502295E3AD007963EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E7AE37532295E3AD007963EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7AE37502295E3AD007963EB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E7AE37532295E3AD007963EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		E7AE37562295E3AD007963EB /* delitime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = delitime.xcdatamodel; sourceTree = "<group>"; };
 		E7AE37582295E3AF007963EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7AE375B2295E3AF007963EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7AE375D2295E3AF007963EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C0D5C622995A6900271917 /* DelitimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelitimeResponse.swift; sourceTree = "<group>"; };
+		E7C0D5C922995B9700271917 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNetworkService.swift; sourceTree = "<group>"; };
+		E7C0D5D02299614A00271917 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E7C0D5D222996EC200271917 /* CarServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarServerModel.swift; sourceTree = "<group>"; };
+		E7C0D5D4229981BA00271917 /* CarOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,38 +43,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FE5A1E29449AE6447DFC6C3 /* Pods_delitime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3955CAA657E740E204FE3195 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DB42B7C91BABA8E2CF86E00B /* Pods-delitime.debug.xcconfig */,
-				3CAE5D4EA62A3FEE294B00DE /* Pods-delitime.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		AD4903547200D954C0208B35 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9BEA841E5A65E8F95CA0B1CA /* Pods_delitime.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E7AE37422295E3AD007963EB = {
 			isa = PBXGroup;
 			children = (
 				E7AE374D2295E3AD007963EB /* delitime */,
+				E7C0D5B32299571900271917 /* Supporting files */,
 				E7AE374C2295E3AD007963EB /* Products */,
-				3955CAA657E740E204FE3195 /* Pods */,
-				AD4903547200D954C0208B35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,15 +69,108 @@
 		E7AE374D2295E3AD007963EB /* delitime */ = {
 			isa = PBXGroup;
 			children = (
-				E7AE374E2295E3AD007963EB /* AppDelegate.swift */,
-				E7AE37502295E3AD007963EB /* ViewController.swift */,
-				E7AE37522295E3AD007963EB /* Main.storyboard */,
-				E7AE37582295E3AF007963EB /* Assets.xcassets */,
+				E7C0D5B2229956BE00271917 /* Application */,
+				E7C0D5B42299589400271917 /* Map */,
+			);
+			path = delitime;
+			sourceTree = "<group>";
+		};
+		E7C0D5AF2299568500271917 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5D02299614A00271917 /* NetworkError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7C0D5B02299569300271917 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7C0D5B12299569900271917 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7AE374E2295E3AD007963EB /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7C0D5B2229956BE00271917 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5AF2299568500271917 /* Model */,
+				E7C0D5B02299569300271917 /* View */,
+				E7C0D5B12299569900271917 /* Controller */,
+				E7C0D5C822995B7C00271917 /* NetworkService */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E7C0D5B32299571900271917 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				E7AE37582295E3AF007963EB /* Assets.xcassets */,
 				E7AE375D2295E3AF007963EB /* Info.plist */,
 				E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */,
 			);
-			path = delitime;
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		E7C0D5B42299589400271917 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5B5229958AF00271917 /* Model */,
+				E7C0D5B6229958B500271917 /* View */,
+				E7C0D5B7229958BB00271917 /* Controller */,
+				E7C0D5CB22995D1A00271917 /* MapNetworkService */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		E7C0D5B5229958AF00271917 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5C622995A6900271917 /* DelitimeResponse.swift */,
+				E7C0D5D222996EC200271917 /* CarServerModel.swift */,
+				E7C0D5D4229981BA00271917 /* CarOnMap.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7C0D5B6229958B500271917 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7AE37522295E3AD007963EB /* Map.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7C0D5B7229958BB00271917 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7AE37502295E3AD007963EB /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7C0D5C822995B7C00271917 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5C922995B9700271917 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		E7C0D5CB22995D1A00271917 /* MapNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */,
+			);
+			path = MapNetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,11 +180,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7AE37602295E3AF007963EB /* Build configuration list for PBXNativeTarget "delitime" */;
 			buildPhases = (
-				851CC0E3434796DC44076F9E /* [CP] Check Pods Manifest.lock */,
 				E7AE37472295E3AD007963EB /* Sources */,
 				E7AE37482295E3AD007963EB /* Frameworks */,
 				E7AE37492295E3AD007963EB /* Resources */,
-				DE71D093E026D9C58ACBE28F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,68 +233,25 @@
 			files = (
 				E7AE375C2295E3AF007963EB /* LaunchScreen.storyboard in Resources */,
 				E7AE37592295E3AF007963EB /* Assets.xcassets in Resources */,
-				E7AE37542295E3AD007963EB /* Main.storyboard in Resources */,
+				E7AE37542295E3AD007963EB /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		851CC0E3434796DC44076F9E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-delitime-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE71D093E026D9C58ACBE28F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-delitime/Pods-delitime-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-delitime/Pods-delitime-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7AE37472295E3AD007963EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C0D5D322996EC200271917 /* CarServerModel.swift in Sources */,
+				E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */,
 				E7AE37572295E3AD007963EB /* delitime.xcdatamodeld in Sources */,
-				E7AE37512295E3AD007963EB /* ViewController.swift in Sources */,
+				E7C0D5C722995A6900271917 /* DelitimeResponse.swift in Sources */,
+				E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */,
+				E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */,
+				E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */,
+				E7C0D5CA22995B9700271917 /* NetworkService.swift in Sources */,
 				E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,12 +259,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E7AE37522295E3AD007963EB /* Main.storyboard */ = {
+		E7AE37522295E3AD007963EB /* Map.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E7AE37532295E3AD007963EB /* Base */,
 			);
-			name = Main.storyboard;
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 		E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */ = {
@@ -360,12 +396,11 @@
 		};
 		E7AE37612295E3AF007963EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB42B7C91BABA8E2CF86E00B /* Pods-delitime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GU3LVMLYVJ;
-				INFOPLIST_FILE = delitime/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,12 +414,11 @@
 		};
 		E7AE37622295E3AF007963EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CAE5D4EA62A3FEE294B00DE /* Pods-delitime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GU3LVMLYVJ;
-				INFOPLIST_FILE = delitime/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
