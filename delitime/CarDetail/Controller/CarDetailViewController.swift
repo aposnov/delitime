@@ -87,7 +87,7 @@ class CarDetailViewController: UIViewController, UIApplicationDelegate, CLLocati
                         addressString = addressString + pm.thoroughfare! + ", "
                     }
                     
-                    if pm.thoroughfare != nil {
+                    if pm.subThoroughfare != nil {
                         addressString = addressString + pm.subThoroughfare!
                     }
                     
