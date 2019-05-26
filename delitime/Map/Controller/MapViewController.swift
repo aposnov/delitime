@@ -24,6 +24,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var carIdPass: Int16?
     var carFuelPass: String?
     var carImgPassString: String?
+    var carLatPass: Double?
+    var carLonPass: Double?
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -72,58 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    //узнаем адрес по координатам
-    func getAddressFromLatLon(pdblLatitude: Double, withLongitude pdblLongitude: Double)  {
-        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = Double("\(pdblLatitude)")!
-        //21.228124
-        let lon: Double = Double("\(pdblLongitude)")!
-        //72.833770
-        let ceo: CLGeocoder = CLGeocoder()
-        center.latitude = lat
-        center.longitude = lon
-        
-        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-        
-        ceo.reverseGeocodeLocation(loc, completionHandler:
-            {(placemarks, error) in
-                if (error != nil)
-                {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
-                }
-                let pm = placemarks! as [CLPlacemark]
-                
-                if pm.count > 0 {
-                    let pm = placemarks![0]
-                    print(pm.country!)
-                    print(pm.locality!)
-                    print(pm.subLocality!)
-                    print(pm.thoroughfare!)
-                    print(pm.postalCode!)
-                    print(pm.subThoroughfare!)
-                    var addressString : String = ""
-                    if pm.subLocality != nil {
-                        addressString = addressString + pm.subLocality! + ", "
-                    }
-                    if pm.thoroughfare != nil {
-                        addressString = addressString + pm.thoroughfare! + ", "
-                    }
-                    if pm.locality != nil {
-                        addressString = addressString + pm.locality! + ", "
-                    }
-                    if pm.country != nil {
-                        addressString = addressString + pm.country! + ", "
-                    }
-                    if pm.postalCode != nil {
-                        addressString = addressString + pm.postalCode! + " "
-                    }
-                    
-                   print(addressString)
-                   
-                }
-        })
   
-    }
     //узнаем где пользователь при запуске
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -144,19 +95,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
        
       
-         let anno = view.annotation as? CarOnMap
+        let anno = view.annotation as? CarOnMap
         
+        //проверяем что это не кластер
         if (anno != nil) {
             
-         getAddressFromLatLon(pdblLatitude: anno!.lat, withLongitude: anno!.lon)
-        
          carImgPassString = anno?.imgString
          carIdPass = anno?.id
          carFuelPass = anno?.fuel
          carModelPass = anno?.model
+         carLatPass = anno?.lat
+         carLonPass = anno?.lon
+            performSegue(withIdentifier: "carDetail", sender: view)
         
-            
-         performSegue(withIdentifier: "carDetail", sender: view)
         }
         
     }
@@ -165,12 +116,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "carDetail" {
-             let des = segue.destination as! CarDetailViewController
+            
+            let des = segue.destination as! CarDetailViewController
             des.carModelPass = carModelPass!
             des.carImgPassString = carImgPassString!
             des.carFuelPass = carFuelPass!
-         //   des.carAddressPass = carAddressPass!
             des.carIdPass = carIdPass!
+            des.carLatPass = carLatPass!
+            des.carLonPass = carLonPass!
      
         }
     }
