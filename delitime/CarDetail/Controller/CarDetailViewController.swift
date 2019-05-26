@@ -15,17 +15,24 @@ class CarDetailViewController: UIViewController, UIApplicationDelegate {
     @IBOutlet weak var carImg: UIImageView!
     @IBOutlet weak var carFuel: UILabel!
     @IBOutlet weak var carAddress: UILabel!
+    @IBOutlet weak var carId: UILabel!
     
-    var carIdPass: Int = 0
+    var carIdPass: Int16 = 0
     var carFuelPass: String = ""
     var carModelPass: String = ""
     var carAddressPass: String = ""
-
+    var carImgPassString: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       carModel.text = carModelPass
+       let imgURL = URL(string: "https://api.delitime.ru"+carImgPassString)!
+       
+        carModel.text = carModelPass
+       carFuel.text = ("Топливо: \(carFuelPass)")
+       carAddress.text = carAddressPass
+       carId.text = String("ID Авто: \(carIdPass)")
+       carImg.load(url: imgURL)
         
         let slideDown = UISwipeGestureRecognizer(target: self, action: #selector(dismissView(gesture:)))
         slideDown.direction = .down
@@ -44,3 +51,5 @@ class CarDetailViewController: UIViewController, UIApplicationDelegate {
     }
     
 }
+
+

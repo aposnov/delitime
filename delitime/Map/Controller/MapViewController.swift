@@ -16,35 +16,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     var carsFromSrv = [CarServerModel]()
-    var carsBrandFromSrv = [CarBrandServerModel]()
-    var cars: [Car] = []
-    var carBrands: [CarModel] = []
     
     var locationTuples: [(textField: UITextField?, mapItem: MKMapItem?)]!
     
     var carModelPass: String?
+    var carAddressPass: String?
+    var carIdPass: Int16?
+    var carFuelPass: String?
+    var carImgPassString: String?
     
     override func viewWillAppear(_ animated: Bool) {
         
-       /* Загружаем автомобили из CoreData */
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
-//
-//        do {
-//            cars = try context.fetch(fetchRequest)
-//        } catch {
-//            print (error.localizedDescription)
-//        }
-//
-//        let fetchRequestZ: NSFetchRequest<CarModel> = CarModel.fetchRequest()
-//
-//        do {
-//            carBrands = try context.fetch(fetchRequestZ)
-//        } catch {
-//            print (error.localizedDescription)
-//        }
     }
     
     override func viewDidLoad() {
@@ -66,40 +48,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         /* Загружаем автомобили */
         DispatchQueue.main.async {
-            MapNetworkService.getCars {(response) in
-           
-            self.carsFromSrv = response.carsFromSrv
-            for i in 0..<self.carsFromSrv.count {
-             
-                    let car = self.carsFromSrv[i]
+                MapNetworkService.getCars {(response) in
+               
+                self.carsFromSrv = response.carsFromSrv
+                for i in 0..<self.carsFromSrv.count {
+                let car = self.carsFromSrv[i]
                     let coordinates = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
-                    let caronmap = CarOnMap(id: car.id, fuel: car.fuel, model: car.model, locationName: "", coordinate: coordinates)
-                
+                    let caronmap = CarOnMap(id: car.id, fuel: car.fuel, model: car.model, locationName: "", coordinate: coordinates, imgString: car.img, lat: car.lat, lon: car.lon)
                     self.mapView.addAnnotation(caronmap)
-                
-
-                
-             //   self.saveCarsToCD(id: self.carsFromSrv[i].id, lon: self.carsFromSrv[i].lon, lat: self.carsFromSrv[i].lat, model: self.carsFromSrv[i].model, fuel:  self.carsFromSrv[i].fuel)
-            }
-            /* загружаем бренды в кд */
-//            self.carsBrandFromSrv = response.carsBrandFromSrv
-//            for i in 0..<self.carsBrandFromSrv.count {
-//                self.saveCarsBrandToCD(name: self.carsBrandFromSrv[i].name, year: self.carsBrandFromSrv[i].year, engineCapacity: self.carsBrandFromSrv[i].engineCapacity, enginePower: self.carsBrandFromSrv[i].enginePower, transmission: self.carsBrandFromSrv[i].transmission, equipment: self.carsBrandFromSrv[i].equipment, img: self.carsBrandFromSrv[i].img, nameFull: self.carsBrandFromSrv[i].nameFull, imgThumb: self.carsBrandFromSrv[i].imgThumb)
-//            }
-        }
+                }
+          
+            } // конец network service
             
-        }
-        
-        /* Отображаем авто на карте из Core Data */
-        
-//        DispatchQueue.main.async {
-//            for i in 0..<self.cars.count {
-//                let car = self.cars[i]
-//                let coordinates = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
-//                let caronmap = CarOnMap(id: car.id, fuel: car.fuel!, model: car.model!, locationName: "", coordinate: coordinates)
-//                self.mapView.addAnnotation(caronmap)
-//            }
-//        }
+        } //конец dispatch
 
         
     }
@@ -110,60 +71,59 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapView.setCenter(self.mapView.userLocation.coordinate, animated: true)
     }
     
-    //функция сохраняет автомобили в кордату
-    func saveCarsToCD(id: Int16, lon: Double, lat: Double, model: String, fuel: String) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Car", in: context)
-        let carObject = NSManagedObject(entity: entity!, insertInto: context) as! Car
-        carObject.id = id
-        carObject.lat = lat
-        carObject.lon = lon
-        carObject.model = model
-        carObject.fuel = fuel
-        
-        do {
-            try context.save()
-        } catch {
-            print (error.localizedDescription)
-        }
-        
-    }
-    
-   
-    func saveCarsBrandToCD(name: String, year: Int16, engineCapacity: Double, enginePower: Int16, transmission: String, equipment: String, img: String, nameFull: String, imgThumb: String) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "CarModel", in: context)
-        let carObject = NSManagedObject(entity: entity!, insertInto: context) as! CarModel
-        carObject.name = name
-        carObject.year = year
-        carObject.engineCapacity = engineCapacity
-        carObject.enginePower = enginePower
-        carObject.transmission = transmission
-        carObject.equipment = equipment
-        carObject.img = img
-        carObject.nameFull = nameFull
-        carObject.imgThumb = imgThumb
-        
-        do {
-            try context.save()
-        } catch {
-            print (error.localizedDescription)
-        }
-        
-    }
     
     //узнаем адрес по координатам
-    func formatAddressFromPlacemark(placemark: CLPlacemark) -> String {
-        return (placemark.addressDictionary!["FormattedAddressLines"] as!
-            [String]).joined(separator: ", ")
+    func getAddressFromLatLon(pdblLatitude: Double, withLongitude pdblLongitude: Double)  {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    print(pm.country!)
+                    print(pm.locality!)
+                    print(pm.subLocality!)
+                    print(pm.thoroughfare!)
+                    print(pm.postalCode!)
+                    print(pm.subThoroughfare!)
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                   print(addressString)
+                   
+                }
+        })
+  
     }
-    
     //узнаем где пользователь при запуске
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -183,20 +143,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
        
-        carModelPass = (view.annotation?.title)!
-         performSegue(withIdentifier: "carDetail", sender: view)
+      
+         let anno = view.annotation as? CarOnMap
         
-    }
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "carDetail" {
+        if (anno != nil) {
             
-            let des = segue.destination as! CarDetailViewController
-            des.carModelPass = carModelPass!
+         getAddressFromLatLon(pdblLatitude: anno!.lat, withLongitude: anno!.lon)
+        
+         carImgPassString = anno?.imgString
+         carIdPass = anno?.id
+         carFuelPass = anno?.fuel
+         carModelPass = anno?.model
+        
+            
+         performSegue(withIdentifier: "carDetail", sender: view)
         }
+        
     }
     
    
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "carDetail" {
+             let des = segue.destination as! CarDetailViewController
+            des.carModelPass = carModelPass!
+            des.carImgPassString = carImgPassString!
+            des.carFuelPass = carFuelPass!
+         //   des.carAddressPass = carAddressPass!
+            des.carIdPass = carIdPass!
+     
+        }
+    }
+  
   
 
 }

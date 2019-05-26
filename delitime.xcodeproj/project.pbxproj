@@ -21,8 +21,9 @@
 		E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D4229981BA00271917 /* CarOnMap.swift */; };
 		E7C0D5DB229999AF00271917 /* CarOnMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DA229999AF00271917 /* CarOnMapView.swift */; };
 		E7C0D5DD229999EB00271917 /* CarOnMapClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */; };
-		E7C0D5DF2299A2B900271917 /* CarBrandServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */; };
 		E7C0D5E12299F59900271917 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5E02299F59900271917 /* CarDetailViewController.swift */; };
+		E7C0D5E8229A8F3F00271917 /* CarDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C0D5E6229A8F3F00271917 /* CarDetail.storyboard */; };
+		E7C0D5EC229A99E000271917 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5EB229A99E000271917 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,9 @@
 		E7C0D5D4229981BA00271917 /* CarOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMap.swift; sourceTree = "<group>"; };
 		E7C0D5DA229999AF00271917 /* CarOnMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMapView.swift; sourceTree = "<group>"; };
 		E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnMapClusterView.swift; sourceTree = "<group>"; };
-		E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandServerModel.swift; sourceTree = "<group>"; };
 		E7C0D5E02299F59900271917 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		E7C0D5E7229A8F3F00271917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = delitime/Map/View/Base.lproj/CarDetail.storyboard; sourceTree = "<group>"; };
+		E7C0D5EB229A99E000271917 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				E7C0D5B2229956BE00271917 /* Application */,
 				E7C0D5B42299589400271917 /* Map */,
+				E7C0D5E2229A8E8B00271917 /* CarDetail */,
 			);
 			path = delitime;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 				E7AE37582295E3AF007963EB /* Assets.xcassets */,
 				E7AE375D2295E3AF007963EB /* Info.plist */,
 				E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */,
+				E7C0D5EB229A99E000271917 /* Extension.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -144,7 +148,6 @@
 			children = (
 				E7C0D5C622995A6900271917 /* DelitimeResponse.swift */,
 				E7C0D5D222996EC200271917 /* CarServerModel.swift */,
-				E7C0D5DE2299A2B900271917 /* CarBrandServerModel.swift */,
 				E7C0D5D4229981BA00271917 /* CarOnMap.swift */,
 				E7C0D5DA229999AF00271917 /* CarOnMapView.swift */,
 				E7C0D5DC229999EB00271917 /* CarOnMapClusterView.swift */,
@@ -164,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				E7AE37502295E3AD007963EB /* MapViewController.swift */,
-				E7C0D5E02299F59900271917 /* CarDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +185,39 @@
 				E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */,
 			);
 			path = MapNetworkService;
+			sourceTree = "<group>";
+		};
+		E7C0D5E2229A8E8B00271917 /* CarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5E3229A8EAA00271917 /* Model */,
+				E7C0D5E4229A8EB200271917 /* View */,
+				E7C0D5E5229A8EB700271917 /* Controller */,
+			);
+			path = CarDetail;
+			sourceTree = "<group>";
+		};
+		E7C0D5E3229A8EAA00271917 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7C0D5E4229A8EB200271917 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5E6229A8F3F00271917 /* CarDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7C0D5E5229A8EB700271917 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5E02299F59900271917 /* CarDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C0D5E8229A8F3F00271917 /* CarDetail.storyboard in Resources */,
 				E7AE375C2295E3AF007963EB /* LaunchScreen.storyboard in Resources */,
 				E7AE37592295E3AF007963EB /* Assets.xcassets in Resources */,
 				E7AE37542295E3AD007963EB /* Map.storyboard in Resources */,
@@ -265,8 +301,8 @@
 				E7C0D5DD229999EB00271917 /* CarOnMapClusterView.swift in Sources */,
 				E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */,
 				E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */,
+				E7C0D5EC229A99E000271917 /* Extension.swift in Sources */,
 				E7C0D5D5229981BA00271917 /* CarOnMap.swift in Sources */,
-				E7C0D5DF2299A2B900271917 /* CarBrandServerModel.swift in Sources */,
 				E7C0D5CA22995B9700271917 /* NetworkService.swift in Sources */,
 				E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */,
 			);
@@ -289,6 +325,14 @@
 				E7AE375B2295E3AF007963EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E7C0D5E6229A8F3F00271917 /* CarDetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7C0D5E7229A8F3F00271917 /* Base */,
+			);
+			name = CarDetail.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

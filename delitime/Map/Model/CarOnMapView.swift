@@ -20,6 +20,7 @@ private extension CarOnMapView {
         markerTintColor = .black
         clusteringIdentifier = "cars"
         displayPriority = .required
+
         
     }
 }

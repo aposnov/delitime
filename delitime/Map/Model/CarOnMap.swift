@@ -14,13 +14,19 @@ class CarOnMap: NSObject, MKAnnotation {
     var model: String
     var locationName: String
     var coordinate: CLLocationCoordinate2D
+    var imgString: String
+    var lat: Double
+    var lon: Double
     
-    init(id: Int16, fuel: String, model: String, locationName: String, coordinate: CLLocationCoordinate2D) {
+    init(id: Int16, fuel: String, model: String, locationName: String, coordinate: CLLocationCoordinate2D, imgString: String, lat: Double, lon: Double) {
         self.model = model
         self.id = id
         self.fuel = fuel
         self.locationName = locationName
         self.coordinate = coordinate
+        self.imgString = imgString
+        self.lat = lat
+        self.lon = lon
         
         super.init()
     }
