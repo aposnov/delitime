@@ -12,7 +12,8 @@ class MapNetworkService{
     private init() {}
     
     static func getCars(completion: @escaping(DelitimeResponse) -> ()){
-        guard let url = URL(string: "https://api.delitime.ru/api/v1/cars?with=fuel,model") else { return }
+        if let path = Bundle.main.path(forResource: "delitime_json", ofType: "json") {
+        let url = URL(fileURLWithPath: path)
         
         NetworkService.shared.getData(url: url) { (json) in
             
@@ -24,5 +25,6 @@ class MapNetworkService{
             }
             
         }
+    }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7AC3E8E235C6C5F00C239ED /* delitime_json.json in Resources */ = {isa = PBXBuildFile; fileRef = E7AC3E8D235C6C5F00C239ED /* delitime_json.json */; };
 		E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE374E2295E3AD007963EB /* AppDelegate.swift */; };
 		E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37502295E3AD007963EB /* MapViewController.swift */; };
 		E7AE37542295E3AD007963EB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37522295E3AD007963EB /* Map.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7AC3E8D235C6C5F00C239ED /* delitime_json.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = delitime_json.json; sourceTree = "<group>"; };
 		E7AE374B2295E3AD007963EB /* delitime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = delitime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AE374E2295E3AD007963EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AE37502295E3AD007963EB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		E7C0D5B32299571900271917 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				E7AC3E8D235C6C5F00C239ED /* delitime_json.json */,
 				E7AE37582295E3AF007963EB /* Assets.xcassets */,
 				E7AE375D2295E3AF007963EB /* Info.plist */,
 				E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */,
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C0D5E8229A8F3F00271917 /* CarDetail.storyboard in Resources */,
+				E7AC3E8E235C6C5F00C239ED /* delitime_json.json in Resources */,
 				E7AE375C2295E3AF007963EB /* LaunchScreen.storyboard in Resources */,
 				E7AE37592295E3AF007963EB /* Assets.xcassets in Resources */,
 				E7AE37542295E3AD007963EB /* Map.storyboard in Resources */,
