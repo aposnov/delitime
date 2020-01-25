@@ -1,4 +1,8 @@
 # delitime
+
+*** Видео о том как я улучшал этот код спустя 7 месяц на YOUTUBE ***
+https://youtu.be/NcJBBcRHtbM
+
 Задание:
 Есть rest метод со списком машин и различными данными
 https://api.delitime.ru/api/v1/cars?with=fuel,model (работает и без параметров).
