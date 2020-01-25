@@ -9,16 +9,16 @@
 import MapKit
 
 class CarOnMap: NSObject, MKAnnotation {
-    var id: Int16
+    var id: Int
     var fuel: String
-    var model: String
+    var model: Model
     var locationName: String
     var coordinate: CLLocationCoordinate2D
     var imgString: String
     var lat: Double
     var lon: Double
     
-    init(id: Int16, fuel: String, model: String, locationName: String, coordinate: CLLocationCoordinate2D, imgString: String, lat: Double, lon: Double) {
+    init(id: Int, fuel: String, model: Model, locationName: String, coordinate: CLLocationCoordinate2D, imgString: String, lat: Double, lon: Double) {
         self.model = model
         self.id = id
         self.fuel = fuel
@@ -32,7 +32,7 @@ class CarOnMap: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        let newTitle = model+", "+fuel
+        let newTitle = (model.name ?? "")+" "+fuel
         return newTitle
     }
     

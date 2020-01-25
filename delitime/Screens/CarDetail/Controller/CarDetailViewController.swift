@@ -9,39 +9,42 @@
 import UIKit
 import MapKit
 
-class CarDetailViewController: UIViewController, UIApplicationDelegate, CLLocationManagerDelegate {
-
+class CarDetailViewController: UIViewController {
     
-    @IBOutlet weak var carModel: UILabel!
-    @IBOutlet weak var carImg: UIImageView!
-    @IBOutlet weak var carFuel: UILabel!
-    @IBOutlet weak var carAddress: UILabel!
-    @IBOutlet weak var carId: UILabel!
+    @IBOutlet private weak var carModel: UILabel!
+    @IBOutlet private weak var carImg: UIImageView!
+    @IBOutlet private weak var carFuel: UILabel!
+    @IBOutlet private weak var carAddress: UILabel!
+    @IBOutlet private weak var carId: UILabel!
     
-    var carIdPass: Int16 = 0
+    var carIdPass: Int = 0
     var carFuelPass: String = ""
-    var carModelPass: String = ""
+    var carModelPass: Model?
     var carImgPassString: String = ""
     var carLatPass: Double = 0.0
     var carLonPass: Double = 0.0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       getAddressFromLatLon(pdblLatitude: carLatPass, withLongitude: carLonPass)
-        
-       let imgURL = URL(string: "https://api.delitime.ru"+carImgPassString)!
-       
-       carModel.text = carModelPass
-       carFuel.text = ("Топливо: \(carFuelPass)")
-      
-       carId.text = String("ID Авто: \(carIdPass)")
-       carImg.load(url: imgURL)
-        
+        self.getAddressFromCoords(pdblLatitude: carLatPass, withLongitude: carLonPass)
+        self.setCarInfo()
+        self.slideDownClose()
+    }
+    
+    private func setCarInfo() {
+        if let imgURL = URL(string: "https://api.delitime.ru"+carImgPassString) {
+            self.carImg.load(url: imgURL)
+        }
+        self.carModel.text = carModelPass?.name
+        self.carFuel.text = ("Топливо: \(carFuelPass)")
+        self.carId.text = String("ID Авто: \(carIdPass)")
+        self.slideDownClose()
+    }
+    
+    private func slideDownClose() {
         let slideDown = UISwipeGestureRecognizer(target: self, action: #selector(dismissView(gesture:)))
         slideDown.direction = .down
         view.addGestureRecognizer(slideDown)
-        
     }
     
     @objc func dismissView(gesture: UISwipeGestureRecognizer) {
@@ -49,24 +52,22 @@ class CarDetailViewController: UIViewController, UIApplicationDelegate, CLLocati
     }
     
     @IBAction func bookCar(_ sender: Any) {
-   
         print("lets book it!")
-        
     }
     
+}
+
+extension CarDetailViewController: CLLocationManagerDelegate {
     //узнаем адрес по координатам
-    func getAddressFromLatLon(pdblLatitude: Double, withLongitude pdblLongitude: Double)  {
-        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = Double("\(pdblLatitude)")!
-        
-        let lon: Double = Double("\(pdblLongitude)")!
-        
-        let ceo: CLGeocoder = CLGeocoder()
+    func getAddressFromCoords(pdblLatitude: Double, withLongitude pdblLongitude: Double)  {
+        var center = CLLocationCoordinate2D()
+        let lat = pdblLatitude
+        let lon = pdblLongitude
+        let ceo = CLGeocoder()
         center.latitude = lat
         center.longitude = lon
-        
-        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-        var addressString : String = ""
+        let loc = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        var addressString = ""
         
         ceo.reverseGeocodeLocation(loc, completionHandler:
             {(placemarks, error) in
@@ -90,15 +91,8 @@ class CarDetailViewController: UIViewController, UIApplicationDelegate, CLLocati
                     if pm.subThoroughfare != nil {
                         addressString = addressString + pm.subThoroughfare!
                     }
-                    
                     self.carAddress.text = addressString
-                    
                 }
         })
-        
-        
     }
-    
 }
-
-

@@ -11,10 +11,8 @@
 		E7AE374F2295E3AD007963EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE374E2295E3AD007963EB /* AppDelegate.swift */; };
 		E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37502295E3AD007963EB /* MapViewController.swift */; };
 		E7AE37542295E3AD007963EB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37522295E3AD007963EB /* Map.storyboard */; };
-		E7AE37572295E3AD007963EB /* delitime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */; };
 		E7AE37592295E3AF007963EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AE37582295E3AF007963EB /* Assets.xcassets */; };
 		E7AE375C2295E3AF007963EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */; };
-		E7C0D5C722995A6900271917 /* DelitimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5C622995A6900271917 /* DelitimeResponse.swift */; };
 		E7C0D5CA22995B9700271917 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5C922995B9700271917 /* NetworkService.swift */; };
 		E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */; };
 		E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C0D5D02299614A00271917 /* NetworkError.swift */; };
@@ -33,11 +31,9 @@
 		E7AE374E2295E3AD007963EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AE37502295E3AD007963EB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E7AE37532295E3AD007963EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
-		E7AE37562295E3AD007963EB /* delitime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = delitime.xcdatamodel; sourceTree = "<group>"; };
 		E7AE37582295E3AF007963EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7AE375B2295E3AF007963EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7AE375D2295E3AF007963EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7C0D5C622995A6900271917 /* DelitimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelitimeResponse.swift; sourceTree = "<group>"; };
 		E7C0D5C922995B9700271917 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E7C0D5CC22995D5D00271917 /* MapNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNetworkService.swift; sourceTree = "<group>"; };
 		E7C0D5D02299614A00271917 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -61,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7664F6F23DC5A31009DB044 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5D02299614A00271917 /* NetworkError.swift */,
+				E7C0D5C922995B9700271917 /* NetworkService.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E7664F7023DC5A45009DB044 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0D5B42299589400271917 /* Map */,
+				E7C0D5E2229A8E8B00271917 /* CarDetail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		E7AE37422295E3AD007963EB = {
 			isa = PBXGroup;
 			children = (
@@ -81,55 +95,20 @@
 		E7AE374D2295E3AD007963EB /* delitime */ = {
 			isa = PBXGroup;
 			children = (
-				E7C0D5B2229956BE00271917 /* Application */,
-				E7C0D5B42299589400271917 /* Map */,
-				E7C0D5E2229A8E8B00271917 /* CarDetail */,
+				E7664F7023DC5A45009DB044 /* Screens */,
+				E7664F6F23DC5A31009DB044 /* Managers */,
 			);
 			path = delitime;
-			sourceTree = "<group>";
-		};
-		E7C0D5AF2299568500271917 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E7C0D5D02299614A00271917 /* NetworkError.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E7C0D5B02299569300271917 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E7C0D5B12299569900271917 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E7AE374E2295E3AD007963EB /* AppDelegate.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E7C0D5B2229956BE00271917 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				E7C0D5AF2299568500271917 /* Model */,
-				E7C0D5B02299569300271917 /* View */,
-				E7C0D5B12299569900271917 /* Controller */,
-				E7C0D5C822995B7C00271917 /* NetworkService */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		E7C0D5B32299571900271917 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				E7AE374E2295E3AD007963EB /* AppDelegate.swift */,
+				E7AE375A2295E3AF007963EB /* LaunchScreen.storyboard */,
 				E7AC3E8D235C6C5F00C239ED /* delitime_json.json */,
 				E7AE37582295E3AF007963EB /* Assets.xcassets */,
 				E7AE375D2295E3AF007963EB /* Info.plist */,
-				E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */,
 				E7C0D5EB229A99E000271917 /* Extension.swift */,
 			);
 			path = "Supporting files";
@@ -149,7 +128,6 @@
 		E7C0D5B5229958AF00271917 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7C0D5C622995A6900271917 /* DelitimeResponse.swift */,
 				E7C0D5D222996EC200271917 /* CarServerModel.swift */,
 				E7C0D5D4229981BA00271917 /* CarOnMap.swift */,
 				E7C0D5DA229999AF00271917 /* CarOnMapView.swift */,
@@ -174,14 +152,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		E7C0D5C822995B7C00271917 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				E7C0D5C922995B9700271917 /* NetworkService.swift */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
 		E7C0D5CB22995D1A00271917 /* MapNetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,18 +163,10 @@
 		E7C0D5E2229A8E8B00271917 /* CarDetail */ = {
 			isa = PBXGroup;
 			children = (
-				E7C0D5E3229A8EAA00271917 /* Model */,
 				E7C0D5E4229A8EB200271917 /* View */,
 				E7C0D5E5229A8EB700271917 /* Controller */,
 			);
 			path = CarDetail;
-			sourceTree = "<group>";
-		};
-		E7C0D5E3229A8EAA00271917 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E7C0D5E4229A8EB200271917 /* View */ = {
@@ -300,8 +262,6 @@
 				E7C0D5E12299F59900271917 /* CarDetailViewController.swift in Sources */,
 				E7C0D5DB229999AF00271917 /* CarOnMapView.swift in Sources */,
 				E7C0D5D12299614A00271917 /* NetworkError.swift in Sources */,
-				E7AE37572295E3AD007963EB /* delitime.xcdatamodeld in Sources */,
-				E7C0D5C722995A6900271917 /* DelitimeResponse.swift in Sources */,
 				E7C0D5DD229999EB00271917 /* CarOnMapClusterView.swift in Sources */,
 				E7C0D5CD22995D5D00271917 /* MapNetworkService.swift in Sources */,
 				E7AE37512295E3AD007963EB /* MapViewController.swift in Sources */,
@@ -472,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aposnov.delitime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -490,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aposnov.delitime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -516,19 +476,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E7AE37552295E3AD007963EB /* delitime.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E7AE37562295E3AD007963EB /* delitime.xcdatamodel */,
-			);
-			currentVersion = E7AE37562295E3AD007963EB /* delitime.xcdatamodel */;
-			path = delitime.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E7AE37432295E3AD007963EB /* Project object */;
 }
