@@ -1,7 +1,7 @@
 # delitime
 
 <b> Видео о том как я улучшал этот код спустя 7 месяц на YOUTUBE </b>
-https://youtu.be/NcJBBcRHtbM
+https://youtu.be/OxFIm6XF8XQ
 
 Задание:
 Есть rest метод со списком машин и различными данными
