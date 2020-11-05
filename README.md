@@ -1,22 +1,9 @@
 # delitime
 
-<b> Видео о том как я улучшал этот код спустя 7 месяц на YOUTUBE </b>
-https://youtu.be/OxFIm6XF8XQ
+Video about how I improved this code after 7 months on YOUTUBE https://youtu.be/OxFIm6XF8XQ
 
-Задание:
-Есть rest метод со списком машин и различными данными
-https://api.delitime.ru/api/v1/cars?with=fuel,model (работает и без параметров).
-Необходимо реализовать тестовое приложение, которое получает список машин и отрисовывает их (координаты изменяются) на карте (яндекс, гугл, mapbox, OSM – не важно). При нажатии на иконку машины, отображать окно с информацией: id авто, кол-во бензина, марка, координаты.
-Дополнительные фичи (такие как внешний вид, меню из текущего приложения Делимобиль) будут плюсом.
+Task: There is a rest method with a list of machines and various data https://api.delitime.ru/api/v1/cars?with=fuel,model (works with and without parameters). You must implement a test application that gets the list of machines and renders them (change of coordinates) on the map (Yandex, Google, mapbox, OSM – does not matter). When you click on the car icon, display a window with information: car id, quantity of gasoline, brand, coordinates. Additional features (such as appearance, menu of the current application Telemobil) will be a plus.
 
-Описание выполнения:
-Была выбрана архитектора MVC-N. Задание выполнено без Cocoapods. Со стандартной картой от Apple, с применением кластеризации. Конвертирование адреса из координат. 
+Execution description: the MVC-n architecture was selected. The task was completed without Cocoapods. With a standard map from Apple, using clustering. Converting an address from coordinates.
 
-Демонстрация работы:<br/>
 <img src="https://media.giphy.com/media/Sr894teDRA5XbS8pZr/giphy.gif" />
-
-
-Задание выполнил:
-<br/>
-Поснов Андрей <br/>
-aposnov.ru
